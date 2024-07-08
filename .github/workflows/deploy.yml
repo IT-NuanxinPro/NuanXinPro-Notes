@@ -25,8 +25,8 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3 # 使用部署到 GitHub pages 的 action
         with:
-          # 部署到 main 分支
-          branch: main
+          # 部署到 gh-pages 分支
+          branch: gh-pages
           # deploy_key: ${{ secrets.NUANXINPRO }} # 部署密钥，在项目的 Settings/Secrets 中配置
           publish_dir: ./docs/.vitepress/dist # 部署目录
           github_token: ${{ secrets.NUANXINPRO }} # secret 名
