@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/NuanXinPro-Notes/',
   title: "NuanXinPro Notes",
   description: "Record daily front-end knowledge",
   themeConfig: {
