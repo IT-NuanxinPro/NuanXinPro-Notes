@@ -28,7 +28,7 @@ jobs:
           # 部署到 gh-pages 分支
           branch: gh-pages
           # deploy_key: ${{ secrets.NUANXINPRO }} # 部署密钥，在项目的 Settings/Secrets 中配置
-          publish_dir: ./docs/.vitepress/dist # 部署目录
+          publish_dir: docs/.vitepress/dist # 部署目录
           github_token: ${{ secrets.NUANXINPRO }} # secret 名
           user_name: ${{ secrets.MY_USER_NAME }}
           user_email: ${{ secrets.MY_USER_EMAIL }}
