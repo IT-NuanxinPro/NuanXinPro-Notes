@@ -27,9 +27,9 @@ jobs:
         with:
           # 部署到 main 分支
           branch: main
-          # deploy_key: ${{ secrets.ADMINPROCICD }} # 部署密钥，在项目的 Settings/Secrets 中配置
+          # deploy_key: ${{ secrets.NUANXINPRO }} # 部署密钥，在项目的 Settings/Secrets 中配置
           publish_dir: ./docs/.vitepress/dist # 部署目录
-          github_token: ${{ secrets.ADMINPROCICD }} # secret 名
+          github_token: ${{ secrets.NUANXINPRO }} # secret 名
           user_name: ${{ secrets.MY_USER_NAME }}
           user_email: ${{ secrets.MY_USER_EMAIL }}
           commit_message: 自动部署 # 部署时的 git 提交信息，自由填写
