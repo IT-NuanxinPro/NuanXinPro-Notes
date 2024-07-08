@@ -7,18 +7,26 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: '首页', link: '/' },
+      { text: '个人成长', link: '/column/vue/index' }
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Vue2',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'options', link: '/column/vue/options' },
+          { text: 'computed', link: '/column/vue/computed' },
+          { text: 'watch', link: '/column/vue/watch' }
         ]
-      }
+      },
+      {
+        text: 'Vue3',
+        items: [
+          { text: 'composition-api', link: '/column/vue3/composition-api' },
+          { text: 'reactive', link: '/column/vue3/reactive' }
+        ]
+      },
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/IT-NuanxinPro/NuanXinPro-Notes' }

@@ -1,4 +1,4 @@
-# Markdown Extension Examples
+# 前端相关知识
 
 This page demonstrates some of the built-in markdown extensions provided by VitePress.
 
