@@ -1,17 +1,8 @@
-/**
- * 暖心のBlog 自定义主题样式
- * 基于 VitePress 默认主题进行个性化定制
- */
-
-/* ========== 颜色系统 ========== */
 :root {
-  /* 品牌色彩 - 温暖明亮的色系 */
   --vp-c-brand-1: #3b82f6;
   --vp-c-brand-2: #2563eb;
   --vp-c-brand-3: #1d4ed8;
   --vp-c-brand-soft: rgba(59, 130, 246, 0.14);
-
-  /* 辅助色彩 */
   --vp-c-tip-1: #10b981;
   --vp-c-tip-2: #059669;
   --vp-c-tip-3: #047857;
@@ -27,20 +18,17 @@
   --vp-c-danger-3: #b91c1c;
   --vp-c-danger-soft: rgba(239, 68, 68, 0.14);
 
-  /* 中性色彩 */
   --vp-c-default-1: #6b7280;
   --vp-c-default-2: #4b5563;
   --vp-c-default-3: #374151;
   --vp-c-default-soft: rgba(107, 114, 128, 0.14);
 
-  /* 自定义颜色变量 - 更亮的渐变 */
   --warm-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
   --warm-gradient-hover: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #db2777 100%);
   --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   --card-shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* ========== 按钮组件样式 ========== */
 :root {
   --vp-button-brand-border: transparent;
   --vp-button-brand-text: var(--vp-c-white);
@@ -53,7 +41,6 @@
   --vp-button-brand-active-bg: var(--vp-c-brand-1);
 }
 
-/* 按钮增强样式 */
 .VPButton.brand {
   border-radius: 25px;
   padding: 12px 24px;
@@ -61,7 +48,6 @@
   color:#000!important;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-  /* color: white !important; */
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -86,7 +72,6 @@
   transform: translateY(-1px);
 }
 
-/* ========== 首页 Hero 区域样式 ========== */
 :root {
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: linear-gradient(
@@ -117,7 +102,6 @@
   }
 }
 
-/* Hero 区域增强 */
 .VPHero .name {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
@@ -138,7 +122,6 @@
   font-weight: 500;
 }
 
-/* Hero 动画效果 */
 .VPHero .name,
 .VPHero .text,
 .VPHero .tagline {
@@ -160,9 +143,6 @@
   }
 }
 
-/**
- * Component: Custom Block
- * -------------------------------------------------------------------------- */
 
 :root {
   --vp-custom-block-tip-border: transparent;
@@ -171,33 +151,11 @@
   --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
 }
 
-/**
- * Component: Algolia
- * -------------------------------------------------------------------------- */
 
-/* ========== 搜索组件样式 ========== */
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
-/* ========== 首页布局优化 ========== */
-.VPHome {
-  padding-bottom: 2rem;
-}
-
-.VPHome .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-/* 隐藏首页footer，让首页适配一屏 */
-.VPHome .VPFooter,
-.VPHome footer {
-  display: none !important;
-}
-
-/* 首页强制一屏显示 - 简单粗暴的方法 */
 body:has(.VPHome) {
   overflow: hidden !important;
   height: 100vh !important;
@@ -208,12 +166,7 @@ html:has(.VPHome) {
   height: 100vh !important;
 }
 
-.VPHome {
-  height: 100vh !important;
-  overflow: hidden !important;
-}
 
-/* ========== Features 特性区域样式 ========== */
 .VPFeatures {
   padding: 1rem 0 2rem;
 }
@@ -224,7 +177,6 @@ html:has(.VPHome) {
   box-shadow: var(--card-shadow-hover);
 }
 
-/* ========== 导航栏样式 ========== */
 .VPNav {
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.9);
@@ -242,7 +194,6 @@ html:has(.VPHome) {
   background-clip: text;
 }
 
-/* ========== 侧边栏样式 ========== */
 .VPSidebar {
   background: var(--vp-c-bg-soft);
   border-right: 1px solid var(--vp-c-divider);
@@ -262,7 +213,6 @@ html:has(.VPHome) {
   color: var(--vp-c-brand-1);
 }
 
-/* ========== 内容区域样式 ========== */
 .VPContent {
   padding-top: 2rem;
 }
@@ -295,7 +245,6 @@ html:has(.VPHome) {
   color: var(--vp-c-text-1);
 }
 
-/* ========== 代码块样式 ========== */
 .vp-doc div[class*='language-'] {
   border-radius: 12px;
   margin: 1.5rem 0;
@@ -306,7 +255,6 @@ html:has(.VPHome) {
   box-shadow: var(--card-shadow-hover);
 }
 
-/* ========== 表格样式 ========== */
 .vp-doc table {
   border-radius: 8px;
   overflow: hidden;
@@ -323,7 +271,6 @@ html:has(.VPHome) {
   background: var(--vp-c-bg-soft);
 }
 
-/* ========== 链接样式 ========== */
 .vp-doc a {
   color: var(--vp-c-brand-1);
   text-decoration: none;
@@ -336,7 +283,6 @@ html:has(.VPHome) {
   text-decoration: underline;
 }
 
-/* ========== 引用块样式 ========== */
 .vp-doc blockquote {
   border-left: 4px solid var(--vp-c-brand-1);
   background: var(--vp-c-brand-soft);
@@ -345,7 +291,6 @@ html:has(.VPHome) {
   margin: 1.5rem 0;
 }
 
-/* ========== 自定义容器样式 ========== */
 .custom-block {
   border-radius: 8px;
   padding: 1rem 1.5rem;
@@ -370,7 +315,6 @@ html:has(.VPHome) {
 
 
 
-/* ========== 响应式设计 ========== */
 @media (max-width: 768px) {
   .VPHero .name {
     font-size: 2.5rem;
@@ -393,7 +337,6 @@ html:has(.VPHome) {
   }
 }
 
-/* ========== 滚动条样式 ========== */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -420,7 +363,6 @@ html:has(.VPHome) {
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* ========== 页面加载动画 ========== */
 .page-enter-active,
 .page-leave-active {
   transition: opacity 0.3s ease;
@@ -431,8 +373,6 @@ html:has(.VPHome) {
   opacity: 0;
 }
 
-/* ========== 特殊效果 ========== */
-/* 鼠标悬停发光效果 */
 .glow-on-hover {
   position: relative;
   overflow: hidden;
@@ -453,7 +393,6 @@ html:has(.VPHome) {
   left: 100%;
 }
 
-/* 打字机效果 */
 .typewriter {
   overflow: hidden;
   border-right: 2px solid var(--vp-c-brand-1);
@@ -471,7 +410,6 @@ html:has(.VPHome) {
   50% { border-color: var(--vp-c-brand-1); }
 }
 
-/* ========== 暗色模式适配 ========== */
 .dark {
   --warm-gradient: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
   --warm-gradient-hover: linear-gradient(135deg, #3a4556 0%, #1a202c 100%);
@@ -479,7 +417,6 @@ html:has(.VPHome) {
   --card-shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* ========== 工具类 ========== */
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 .text-right { text-align: right; }
@@ -505,7 +442,6 @@ html:has(.VPHome) {
 .shadow { box-shadow: var(--card-shadow); }
 .shadow-lg { box-shadow: var(--card-shadow-hover); }
 
-/* ========== 自定义徽章样式 ========== */
 .badge {
   display: inline-block;
   padding: 0.25rem 0.75rem;
@@ -535,3 +471,10 @@ html:has(.VPHome) {
   border-color: var(--vp-c-danger-1);
 }
 
+/* 移动端修复：导航抽屉全屏高度 */
+@media (max-width: 768px) {
+  .VPNavScreen {
+    height: 100vh;
+    min-height: 100vh;
+  }
+}
