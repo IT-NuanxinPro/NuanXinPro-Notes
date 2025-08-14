@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: '/vitePress/',
+  base: '/NuanXinPro-Notes/',
   title: "暖心のBlog",
   description: "Record daily front-end knowledge",
   head: [
