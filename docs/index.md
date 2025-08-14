@@ -5,27 +5,36 @@ layout: home
 hero:
   name: "暖心のBlog"
   text: "Record daily front-end knowledge"
-  tagline: 格子衬衫/互联网牛马/加班码农
-  image: 
-     src:/avatar.png
-     alt:avatar
+  tagline: 专注前端技术分享 | 记录成长足迹 | 构建知识体系
+  image:
+     src: /avatar.svg
+     alt: 暖心のBlog Logo
   actions:
     - theme: brand
-      text: 进入主页
-      link: /column/vue/index
+      text: 🚀 开始探索
+      link: /frontend/basics/html
     - theme: alt
-      text: 个人成长
-      link: /column/vue/index
+      text: 📚 知识体系
+      link: /guide/
 
 features:
-  - icon: 🐶
-    title: 前端开发
-    details: 拥有丰富的前端开发经验，熟练掌握HTML、CSS、JavaScript、ES6、Vue等前端开发技术
-  - icon: 🐻
-    title: Web性能优化
-    details: 熟练掌握Web性能优化，提升网站访问速度和用户体验
-  - icon: 🙍‍♂️
-    title: Ui设计
-    details: 熟练掌握UI设计、交互设计等
+  - icon: 🎯
+    title: 核心框架
+    details: Vue3/React18 生态，组件化开发，状态管理
+  - icon: 🛠️
+    title: 工程化工具
+    details: Vite/Webpack 构建，Git 工作流，代码质量
+  - icon: ⚡
+    title: 性能优化
+    details: 构建优化，运行时性能，缓存策略
+  - icon: 💼
+    title: 面试突破
+    details: 高频面试题，手写代码，项目经验
+  - icon: 🎨
+    title: UI 设计
+    details: 组件库使用，设计系统，响应式布局
+  - icon: 🚀
+    title: 实战项目
+    details: 企业级架构，最佳实践，技术选型
 ---
 
