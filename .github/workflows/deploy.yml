@@ -3,36 +3,56 @@ name: 部署VitePress
 on:
   push:
     branches:
-      - main # 这段是在推送到 docs 分支时触发该命令
+      - main
+  workflow_dispatch: # 允许手动触发
+
+# 设置权限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 确保只有一个部署任务同时运行
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          ref: main # 这一步检查 docs 代码
+          fetch-depth: 0 # 获取完整历史，VitePress需要
 
-      - name: Setup Node.js and pnpm
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: "22.2.0" # 设置 nodejs 的版本
+          node-version: 22
+          cache: 'npm'
 
-      - name: Install pnpm
-        run: npm install -g pnpm # 全局安装 pnpm
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
       - name: Install dependencies
-        run: pnpm install # 使用 pnpm 安装依赖
+        run: npm ci
 
-      - name: Build VitePress
-        run: pnpm run docs:build # 这里是打包 vitepress 命令
+      - name: Build with VitePress
+        run: npm run docs:build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.NUANXINPRO}} # 这一步很重要，单独看下面的大步骤，主要是用来给该脚本一些仓库权限
-          publish_dir: docs/.vitepress/dist # 指定该文件夹中的 dist
-          publish_branch: gh-pages # 推送到关联仓库的 gh-pages 分支
-          dotfiles: true # 包括在提交中，即使被 .gitignore 文件忽略
+          path: docs/.vitepress/dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
