@@ -360,6 +360,8 @@ export default defineConfig({
         {
           text: 'CI/CD 流程',
           items: [
+            // 概述
+            { text: 'CI/CD 概述', link: '/frontend/engineering/cicd/' },
             // { text: 'GitHub Actions', link: '/frontend/engineering/cicd/github-actions' },
             // { text: '自动化部署', link: '/frontend/engineering/cicd/deployment' },
             // { text: '版本发布管理', link: '/frontend/engineering/cicd/release' },
@@ -370,6 +372,7 @@ export default defineConfig({
         {
           text: '性能优化',
           items: [
+            { text: '性能优化概述', link: '/frontend/engineering/performance/' },
             // { text: '性能监控', link: '/frontend/engineering/performance/monitoring' },
             // { text: '代码分割', link: '/frontend/engineering/performance/code-splitting' },
             // { text: '懒加载策略', link: '/frontend/engineering/performance/lazy-loading' },
@@ -382,6 +385,7 @@ export default defineConfig({
         {
           text: '监控分析',
           items: [
+            { text: '监控分析概述', link: '/frontend/engineering/monitoring/' },
             // { text: '错误监控', link: '/frontend/engineering/monitoring/error-tracking' },
             // { text: '性能分析', link: '/frontend/engineering/monitoring/performance-analysis' },
             // { text: '用户行为分析', link: '/frontend/engineering/monitoring/user-analytics' },
