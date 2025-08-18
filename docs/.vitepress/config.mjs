@@ -13,13 +13,11 @@ export default defineConfig({
     ['meta', { name: 'og:site_name', content: '暖心のBlog' }],
   ],
 
-  // 构建优化配置
   vite: {
     build: {
       chunkSizeWarningLimit: 3000,
       rollupOptions: {
         output: {
-          // 手动分包策略 - 更细粒度的分包
           manualChunks(id) {
             if (id.includes('node_modules')) {
               if (id.includes('vitepress')) {
@@ -62,10 +60,24 @@ export default defineConfig({
       {
         text: '🛠️ 前端工具链',
         items: [
-          { text: 'Git', link: '/frontend/tools/git/workflow' },
+          { text: 'Git 版本控制', link: '/frontend/tools/git/workflow' },
           { text: '包管理器', link: '/frontend/tools/package-manager/' },
-          { text: '构建工具', link: '/frontend/tools/build/' },
-          { text: 'Node版本管理', link: '/frontend/tools/environment/node-version' }
+          { text: '开发环境', link: '/frontend/tools/environment/node-version' },
+          { text: '编辑器配置', link: '/frontend/tools/editor/vscode' },
+          { text: '调试工具', link: '/frontend/tools/debugging/' },
+        ]
+      },
+      {
+        text: '⚡ 前端工程化',
+        items: [
+          // { text: '项目架构', link: '/frontend/engineering/architecture/' },
+          { text: '构建系统', link: '/frontend/engineering/build/' },
+          { text: '代码质量', link: '/frontend/engineering/quality/' },
+          // { text: '测试策略', link: '/frontend/engineering/testing/' },
+          { text: 'Monorepo 管理', link: '/frontend/engineering/monorepo/overview' },
+          { text: 'CI/CD 流程', link: '/frontend/engineering/cicd/' },
+          { text: '性能优化', link: '/frontend/engineering/performance/' },
+          // { text: '监控分析', link: '/frontend/engineering/monitoring/' },
         ]
       },
       {
@@ -76,20 +88,12 @@ export default defineConfig({
         ]
       },
       {
-        text: '⚡ 工程化',
-        items: [
-          { text: '性能优化', link: '/frontend/performance/' },
-          { text: '代码质量', link: '/frontend/tools/quality/' },
-          { text: '测试策略', link: '/frontend/tools/testing/' }
-        ]
-      },
-      {
         text: '💼 面试宝典',
         items: [
           { text: '基础面试题', link: '/interview/questions/' },
           { text: '手写代码题', link: '/interview/coding/' },
-          { text: '项目实战', link: '/interview/projects/' },
-          { text: '算法题库', link: '/interview/algorithms/' }
+          // { text: '项目实战', link: '/interview/projects/' },
+          { text: '简易算法', link: '/interview/algorithms/' }
         ]
       }
     ],
@@ -270,15 +274,13 @@ export default defineConfig({
           items: [
             { text: 'Git 工作流实战', link: '/frontend/tools/git/workflow' },
             { text: 'Git 分支策略', link: '/frontend/tools/git/branching' },
-            { text: 'Git 最佳实践', link: '/frontend/tools/git/best-practices' }
           ]
         },
         {
           text: '包管理器',
           items: [
             { text: 'npm/yarn/pnpm', link: '/frontend/tools/package-manager/' },
-            { text: '依赖管理策略', link: '/frontend/tools/package-manager/dependencies' },
-            { text: 'Monorepo 管理', link: '/frontend/tools/package-manager/monorepo' }
+            { text: '依赖管理策略', link: '/frontend/tools/package-manager/dependencies' }
           ]
         },
         {
@@ -290,48 +292,103 @@ export default defineConfig({
           ]
         },
         {
-          text: '构建工具',
+          text: '编辑器配置',
           items: [
-            { text: 'Vite 企业级配置', link: '/frontend/tools/build/vite-config' },
-            // { text: 'Webpack 配置', link: '/frontend/tools/build/webpack' },
-            // { text: 'Rollup 打包', link: '/frontend/tools/build/rollup' },
-            // { text: 'esbuild 快速构建', link: '/frontend/tools/build/esbuild' }
+            { text: 'VSCode 配置', link: '/frontend/tools/editor/vscode' },
+            { text: '插件推荐', link: '/frontend/tools/editor/plugins' },
           ]
         },
         {
-          text: 'Vite 插件开发',
+          text: '调试工具',
           items: [
-            { text: 'px 转 vw 插件', link: '/frontend/tools/build/vite-plugins/px-to-vw' },
-            { text: '资源预加载插件', link: '/frontend/tools/build/vite-plugins/preload' },
-            // { text: '自动导入图标插件', link: '/frontend/tools/build/vite-plugins/auto-import-icons' }
+            // { text: '浏览器调试', link: '/frontend/tools/debugging/browser' },
+            // { text: '移动端调试', link: '/frontend/tools/debugging/mobile' },
+            // { text: '性能调试', link: '/frontend/tools/debugging/performance' }
           ]
-        },
+        }
+      ],
+
+      '/frontend/engineering/': [
         {
-          text: '代码质量',
+          text: '前端工程化',
           items: [
-            { text: 'Git Hooks 企业级配置', link: '/frontend/tools/quality/git-hooks' },
-            { text: 'ESLint 规范', link: '/frontend/tools/quality/eslint' },
-            { text: 'Prettier 格式化', link: '/frontend/tools/quality/prettier' },
-            { text: 'Stylelint 样式规范', link: '/frontend/tools/quality/stylelint' }
+            { text: '概述', link: '/frontend/engineering/' },
           ]
         },
         // {
         //   text: '项目架构',
         //   items: [
-        //     { text: '企业级项目结构', link: '/frontend/tools/architecture/project-structure' },
-        //     { text: '模块化设计', link: '/frontend/tools/architecture/modular-design' },
-        //     { text: '组件设计规范', link: '/frontend/tools/architecture/component-design' }
+        //     { text: '企业级项目结构', link: '/frontend/engineering/architecture/project-structure' },
+        //     { text: '模块化设计', link: '/frontend/engineering/architecture/modular-design' },
+        //     { text: '组件设计规范', link: '/frontend/engineering/architecture/component-design' },
+        //     { text: '微前端架构', link: '/frontend/engineering/architecture/micro-frontend' }
         //   ]
         // },
-        // {
-        //   text: '测试框架',
-        //   items: [
-        //     { text: 'Jest 单元测试', link: '/frontend/tools/testing/jest' },
-        //     { text: 'Vitest 现代测试', link: '/frontend/tools/testing/vitest' },
-        //     { text: 'Cypress E2E 测试', link: '/frontend/tools/testing/cypress' },
-        //     { text: 'Testing Library', link: '/frontend/tools/testing/testing-library' }
-        //   ]
-        // }
+        {
+          text: '构建系统',
+          items: [
+            { text: '概述', link: '/frontend/engineering/build/' },
+            { text: 'Vite 配置详解', link: '/frontend/engineering/build/vite-config' },
+            { text: 'Webpack 配置详解', link: '/frontend/engineering/build/webpack-config' },
+            // { text: 'Rollup 打包', link: '/frontend/engineering/build/rollup' },
+            // { text: 'esbuild 快速构建', link: '/frontend/engineering/build/esbuild' },
+            // { text: '构建优化策略', link: '/frontend/engineering/build/optimization' },
+            { text: 'Vite 插件开发', link: '/frontend/engineering/build/vite-plugins/' }
+          ]
+        },
+        {
+          text: '代码质量',
+          items: [
+            { text: 'ESLint 规范配置', link: '/frontend/engineering/quality/eslint' },
+            { text: 'Prettier 格式化', link: '/frontend/engineering/quality/prettier' },
+            { text: 'Stylelint 样式规范', link: '/frontend/engineering/quality/stylelint' },
+            { text: 'Git Hooks 配置', link: '/frontend/engineering/quality/git-hooks' },
+            // { text: '代码审查流程', link: '/frontend/engineering/quality/code-review' },
+            // { text: 'TypeScript 规范', link: '/frontend/engineering/quality/typescript' }
+          ]
+        },
+        {
+          text: 'Monorepo 管理',
+          items: [
+            { text: 'Monorepo 概述', link: '/frontend/engineering/monorepo/overview' },
+            // { text: 'pnpm Workspaces', link: '/frontend/engineering/monorepo/pnpm' },
+            // { text: 'Lerna 管理', link: '/frontend/engineering/monorepo/lerna' },
+            // { text: 'Nx 企业方案', link: '/frontend/engineering/monorepo/nx' },
+            // { text: 'Turborepo 优化', link: '/frontend/engineering/monorepo/turborepo' }
+          ]
+        },
+        {
+          text: 'CI/CD 流程',
+          items: [
+            // { text: 'GitHub Actions', link: '/frontend/engineering/cicd/github-actions' },
+            // { text: '自动化部署', link: '/frontend/engineering/cicd/deployment' },
+            // { text: '版本发布管理', link: '/frontend/engineering/cicd/release' },
+            // { text: '多环境管理', link: '/frontend/engineering/cicd/environments' },
+            // { text: '容器化部署', link: '/frontend/engineering/cicd/docker' }
+          ]
+        },
+        {
+          text: '性能优化',
+          items: [
+            // { text: '性能监控', link: '/frontend/engineering/performance/monitoring' },
+            // { text: '代码分割', link: '/frontend/engineering/performance/code-splitting' },
+            // { text: '懒加载策略', link: '/frontend/engineering/performance/lazy-loading' },
+            // { text: '缓存策略', link: '/frontend/engineering/performance/caching' },
+            // { text: '图片优化', link: '/frontend/engineering/performance/images' },
+            // { text: 'Web Vitals', link: '/frontend/engineering/performance/web-vitals' },
+            // { text: 'Bundle 分析', link: '/frontend/engineering/performance/bundle-analysis' }
+          ]
+        },
+        {
+          text: '监控分析',
+          items: [
+            // { text: '错误监控', link: '/frontend/engineering/monitoring/error-tracking' },
+            // { text: '性能分析', link: '/frontend/engineering/monitoring/performance-analysis' },
+            // { text: '用户行为分析', link: '/frontend/engineering/monitoring/user-analytics' },
+            // { text: '日志管理', link: '/frontend/engineering/monitoring/logging' },
+            // { text: '告警系统', link: '/frontend/engineering/monitoring/alerting' }
+          ]
+        }
       ],
 
       '/frontend/ui/': [
@@ -368,18 +425,13 @@ export default defineConfig({
         }
       ],
 
-      '/frontend/performance/': [
+      '/frontend/engineering/build/vite-plugins/': [
         {
-          text: '性能优化',
+          text: 'Vite 插件开发',
           items: [
-            { text: '概述', link: '/frontend/performance/' },
-            { text: '性能监控', link: '/frontend/performance/monitoring' },
-            { text: '代码分割', link: '/frontend/performance/code-splitting' },
-            { text: '懒加载', link: '/frontend/performance/lazy-loading' },
-            { text: '缓存策略', link: '/frontend/performance/caching' },
-            { text: '图片优化', link: '/frontend/performance/images' },
-            { text: 'Web Vitals', link: '/frontend/performance/web-vitals' },
-            { text: 'Bundle 分析', link: '/frontend/performance/bundle-analysis' }
+            { text: '插件开发指南', link: '/frontend/engineering/build/vite-plugins/' },
+            { text: '行间样式 px 转 vw', link: '/frontend/engineering/build/vite-plugins/px-to-vw' },
+            { text: '资源预加载插件', link: '/frontend/engineering/build/vite-plugins/preload' }
           ]
         }
       ],
